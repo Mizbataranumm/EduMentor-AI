@@ -4,12 +4,19 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    answer = ""
+    response = None
     if request.method == "POST":
-        question = request.form["question"]
-        # Dummy logic for now (can replace with AI call)
-        answer = f"You asked: {question}. This is your AI-generated response."
-    return render_template("index.html", answer=answer)
+        question = request.form.get("question")
+        
+        # Dummy AI response (you can replace this with ChatGPT API later)
+        if "exam" in question.lower():
+            response = "Focus on past year questions and time management."
+        elif "career" in question.lower():
+            response = "Consider your interests and explore internships in that area."
+        else:
+            response = "That's a great question! Keep learning and stay curious."
+
+    return render_template("index.html", response=response)
 
 if __name__ == "__main__":
     app.run(debug=True)
