@@ -1,26 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>EduMentor-AI</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>🎓 EduMentor-AI</h1>
-        <p>Your AI Study Buddy — Ask Anything!</p>
-
-        <form method="POST">
-            <textarea name="question" placeholder="Type your question here..." required></textarea>
-            <button type="submit">Get Answer</button>
-        </form>
-
-        {% if answer %}
-        <div class="answer-box">
-            <h3>AI Response:</h3>
-            <p>{{ answer }}</p>
-        </div>
-        {% endif %}
+        <h1>Welcome to EduMentor-AI</h1>
+        <img src="{{ url_for('static', filename='EduMentor-AI.png') }}" alt="EduMentor Logo">
     </div>
 </body>
 </html>
