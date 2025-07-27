@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>EduMentor AI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 30px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .response {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>EduMentor AI</h1>
+        <p>Ask me anything related to your academics!</p>
+        <form method="post">
+            <textarea name="question" placeholder="Type your question here..." required></textarea>
+            <button type="submit">Get Help</button>
+        </form>
 
-    <h1>Welcome to EduMentor AI</h1>
-    <p>Empowering students with personalized guidance and smart mentoring.</p>
-
-    <img src="{{ url_for('static', filename='EduMentor-AI.png') }}" alt="EduMentor Logo" width="200">
-
+        {% if response %}
+        <div class="response">
+            <strong>AI Mentor:</strong>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>
-
