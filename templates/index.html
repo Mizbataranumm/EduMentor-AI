@@ -1,11 +1,19 @@
-<form method="post">
-    <textarea name="question" placeholder="Type your question here..." required></textarea>
-    <button type="submit">Get Help</button>
-</form>
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduMentor AI</title>
+</head>
+<body>
+    <h1>Ask your academic/career question</h1>
+    <form method="post">
+        <input type="text" name="question" placeholder="Type your question here..." required>
+        <input type="submit" value="Get Help">
+    </form>
 
-{% if response %}
-<div class="response">
-    <strong>AI Mentor:</strong>
-    <p>{{ response }}</p>
-</div>
-{% endif %}
+    {% if response %}
+        <h2>AI Mentor says:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
