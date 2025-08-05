@@ -17,3 +17,6 @@ def index():
             response = "That's a great question! Keep learning."
 
     return render_template("index.html", response=response)
+
+if __name__ == "__main__":
+    app.run(debug=True)  # <--- THIS was missing!
