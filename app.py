@@ -8,7 +8,6 @@ def index():
     if request.method == "POST":
         question = request.form.get("question")
 
-        # Dummy logic
         if "exam" in question.lower():
             response = "Focus on past year questions and time management."
         elif "career" in question.lower():
@@ -19,4 +18,4 @@ def index():
     return render_template("index.html", response=response)
 
 if __name__ == "__main__":
-    app.run(debug=True)  # <--- THIS was missing!
+    app.run(debug=True)
